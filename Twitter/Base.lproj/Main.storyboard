@@ -48,14 +48,16 @@
             </objects>
             <point key="canvasLocation" x="-74.299065420560737" y="174.94600431965443"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Home-->
         <scene sceneID="BxU-u3-rNn">
             <objects>
-                <tableViewController id="oFH-e6-m1C" sceneMemberID="viewController">
+                <tableViewController id="oFH-e6-m1C" customClass="HomeTableTableViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Xsr-wm-TdO">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="linkColor"/>
+                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5wb-EC-G0X">
                                 <rect key="frame" x="0.0" y="28" width="428" height="43.666667938232422"/>
@@ -71,7 +73,14 @@
                             <outlet property="delegate" destination="oFH-e6-m1C" id="Lcf-Je-QA5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Soc-g0-10C"/>
+                    <navigationItem key="navigationItem" title="Home" id="Soc-g0-10C">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="OwV-YL-8dQ">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="oFH-e6-m1C" id="wph-Ha-dJv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GRt-ag-FB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,10 +89,14 @@
         <!--Navigation Controller-->
         <scene sceneID="VKy-bz-OL8">
             <objects>
-                <navigationController id="HQQ-Yh-A8i" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="HQQ-Yh-A8i" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vAr-Bh-Vey">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" systemColor="linkColor"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="oFH-e6-m1C" kind="relationship" relationship="rootViewController" id="VN4-pL-4bV"/>
@@ -95,6 +108,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
