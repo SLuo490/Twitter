@@ -13,7 +13,6 @@ class HomeTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
     }
 
     @IBAction func onLogout(_ sender: Any) {
